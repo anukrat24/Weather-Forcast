@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" th:href="@{css/dashboard.css}">
+</head>
+<body>
+<div class="dashboard-container">
+  <h1>Weather in <span th:text="${weather.city}">City</span></h1>
+
+  <!-- Today's Weather -->
+  <div class="today-weather">
+    <h2>Today</h2>
+    <p><strong>Temperature:</strong> <span th:text="${weather.currentTemperature}">0</span> °C</p>
+    <p><strong>Humidity:</strong> <span th:text="${weather.currentHumidity}">0</span>%</p>
+    <p><strong>Description:</strong> <span th:text="${weather.currentDescription}">Clear</span></p>
+  </div>
+
+  <!-- 5-Day Forecast -->
+  <div class="forecast-section">
+    <h2>5-Day Forecast</h2>
+    <div class="forecast-cards">
+      <div class="forecast-card" th:each="day : ${weather.forecast}">
+        <h3 th:text="${day.day}">Day</h3>
+        <p><strong>Max:</strong> <span th:text="${day.maxTemp}">0</span> °C</p>
+        <p><strong>Min:</strong> <span th:text="${day.minTemp}">0</span> °C</p>
+        <p><strong>Desc:</strong> <span th:text="${day.description}">Description</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

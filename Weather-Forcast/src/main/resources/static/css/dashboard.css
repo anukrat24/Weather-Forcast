@@ -1,0 +1,110 @@
+/* === General Body Styles === */
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add blurred background image */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("images/img_1.png") no-repeat center center/cover;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+/* === Dashboard Container === */
+/*.dashboard-container {*/
+/*    width: 90%;*/
+/*    max-width: 1000px;*/
+/*    margin: 60px auto;*/
+/*    padding: 40px;*/
+/*    background: rgba(255, 255, 255, 0.15);*/
+/*    border-radius: 15px;*/
+/*    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);*/
+/*    backdrop-filter: blur(10px);*/
+/*}*/
+
+/* === Heading === */
+.dashboard-container h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+}
+
+/* === Today's Weather === */
+.today-weather {
+    margin-bottom: 10px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+/* === Today's Weather Text === */
+.today-weather h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #1e3a8a;
+}
+
+.today-weather p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+/* === Forecast Section === */
+.forecast-section {
+    text-align: center;
+}
+
+.forecast-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+/* === Forecast Cards === */
+.forecast-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* === Forecast Card === */
+.forecast-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    width: 18%; /* five cards in a row */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-card h3 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #1e3a8a;
+}
+
+.forecast-card p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
